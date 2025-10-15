@@ -4,16 +4,16 @@ namespace Authentication.Services;
 
 public class AuthService
 {
-    private readonly JwtTokenGenerator _jwt;
+    private readonly JwtGenerator _jwt;
 
-    public AuthService(JwtTokenGenerator jwt)
+    public AuthService(JwtGenerator jwt)
     {
         _jwt = jwt;
     }
 
     public string? Authenticate(LoginRequest request)
     {
-        if (request.Username == "test" && request.Password == "password123")
+        if (request.Username == "admin" && request.Password == "password")
             return _jwt.GenerateToken(request.Username);
 
         return null;

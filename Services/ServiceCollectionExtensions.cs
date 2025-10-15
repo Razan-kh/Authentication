@@ -32,7 +32,7 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddAppServices(this IServiceCollection services)
     {
-        services.AddSingleton<JwtTokenGenerator>();
+        services.AddSingleton<JwtGenerator>();
         services.AddScoped<AuthService>();
         return services;
     }

@@ -9,6 +9,10 @@ using Authentication.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddJwtAuthentication(builder.Configuration);
+builder.Services.Configure<JwtOptions>(
+    builder.Configuration.GetSection("Jwt")
+);
+
 builder.Services.AddAppServices();
 
 var app = builder.Build();
